@@ -1,0 +1,97 @@
+:root {
+    --card-bg: #ffffff;
+    --border-color: #ffafbd;
+    --primary-color: #ff3838;
+    --text-color: #333;
+    --quote-color: #666;
+}
+
+/* Gold Theme Variables */
+.theme-gold {
+    --card-bg: #fffdf0;
+    --border-color: #d4af37;
+    --primary-color: #aa8a2e;
+    --text-color: #443e2a;
+    --quote-color: #7a6e4a;
+}
+
+/* Dark Theme Variables */
+.theme-dark {
+    --card-bg: #1a1a1a;
+    --border-color: #444;
+    --primary-color: #e63946;
+    --text-color: #f1f1f1;
+    --quote-color: #aaa;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fdf2f4;
+    padding: 20px;
+}
+
+.ui-container {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.options { margin: 15px 0; font-size: 0.9rem; }
+select { padding: 5px; border-radius: 5px; border: 1px solid #ccc; }
+
+.button-row { display: flex; gap: 8px; justify-content: center; margin-top: 15px; }
+
+button { padding: 10px 15px; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; color: white; }
+#generateBtn { background: var(--primary-color); }
+#downloadBtn { background: #2ecc71; }
+#printBtn { background: #444; }
+
+/* The Card Structure */
+#card {
+    width: 380px;
+    height: 500px;
+    background: var(--card-bg);
+    border: 12px double var(--border-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.4s ease;
+    padding: 20px;
+}
+
+.heart {
+    background-color: var(--primary-color);
+    height: 80px;
+    width: 80px;
+    transform: rotate(-45deg);
+    margin-bottom: 50px;
+    position: relative;
+    transition: background-color 0.4s;
+}
+
+.heart::before, .heart::after {
+    content: "";
+    background-color: inherit;
+    border-radius: 50%;
+    height: 80px; width: 80px;
+    position: absolute;
+}
+.heart::before { top: -40px; left: 0; }
+.heart::after { left: 40px; top: 0; }
+
+.card-title { font-family: 'Georgia', serif; color: var(--text-color); margin: 0; }
+#recipient-name { color: var(--primary-color); font-size: 2.2rem; font-family: 'Georgia', serif; margin: 10px 0; }
+#valentine-quote { font-style: italic; color: var(--quote-color); max-width: 80%; }
+
+@media print {
+    .no-print { display: none; }
+    #card { border: 8px solid var(--border-color); margin: auto; }
+}

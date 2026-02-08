@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine Card Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+
+    <div class="ui-container no-print">
+        <h2>Valentine Studio</h2>
+        <div class="input-group">
+            <input type="text" id="nameInput" placeholder="Recipient's Name" maxlength="20">
+            
+            <div class="options">
+                <label for="themeSelect">Theme:</label>
+                <select id="themeSelect">
+                    <option value="classic">Classic Red</option>
+                    <option value="gold">Modern Gold</option>
+                    <option value="dark">Midnight Love</option>
+                </select>
+            </div>
+
+            <div class="button-row">
+                <button id="generateBtn">Update Card</button>
+                <button id="downloadBtn">Download PNG</button>
+                <button id="printBtn">Print</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="card" class="theme-classic">
+        <div class="heart"></div>
+        <h1 class="card-title">Happy Valentine's Day</h1>
+        <div id="recipient-name">My Valentine</div>
+        <p id="valentine-quote">"You make my heart skip a beat."</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
